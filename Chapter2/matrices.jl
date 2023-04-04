@@ -57,7 +57,50 @@ begin
 
     end
 
-    visualize_vectors()
-    visualize_adding_simple_vectors()
+        """
+    This function visualizes how vectors work
+
+    Key take aways:
+        - size: to add vectos together, they have to be the
+        - same size
+        - multiplication: multiplying simple vector
+
+    Returns:
+    The sum of x and y.
+    """
+    function visualize_multiplying_simple_vectors_row_x_cols()
+        as_row = [1 2 3]
+        as_col = [1 2 3 ; 1 2 3; 1 2 3]
+
+        product = as_row*as_col[:,1]
+        
+        println("Visualize Multiplying Simple Vectors\n")
+
+        println("Vector 1: $as_row")
+        println("Vector 2: $(as_col[:,1])")
+
+        println("$(as_row) x $(as_col[:,1]) = $(product[1])")
+
+
+    end
+
+    function visualize_multiplying_simple_vectors_rows_x_rows()
+        as_row_1 = [1 2 3]
+        as_row_2 = [1 2 3 ; 1 2 3; 1 2 3]
+
+        product = as_row_1 .*as_row_2[1,:]'
+        
+        println("Visualize Multiplying Simple Vectors\n")
+
+        println("Vector 1: $(as_row_1)")
+        println("Vector 2: $(as_row_2[1,:]')")
+
+        println("$(as_row_1) x $(as_row_2[1,:]) = $(product[1])")
+
+
+    end
+
+    visualize_multiplying_simple_vectors_row_x_cols()
+    visualize_multiplying_simple_vectors_rows_x_rows()
 
 end
